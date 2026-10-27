@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ams-bridge"
+version = "0.5.1.dev1"
+description = "Local SSH client for reproducible Cadence AMS jobs"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["ams", "cadence", "simulation", "waveforms", "ssh"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+waveforms = ["psf-utils==1.11", "pyvcd==0.5.1"]
+
+[project.scripts]
+ams-bridge = "ams_bridge.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

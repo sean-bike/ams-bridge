@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "execution": {
+    "ssh_host": "simulation-server",
+    "ssh_config_file": "ssh.local",
+    "remote_root": "/tmp/ams-bridge-v1",
+    "local_output_root": "../runs",
+    "xrun_path": "xrun",
+    "wall_timeout_s": 120,
+    "transfer_timeout_s": 300
+  },
+  "concurrency": 2,
+  "entries": [
+    {
+      "id": "rc_a",
+      "prepared": "../prepared/rc-batch"
+    },
+    {
+      "id": "rc_b",
+      "prepared": "../prepared/rc-batch"
+    }
+  ]
+}

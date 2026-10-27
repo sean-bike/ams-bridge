@@ -1,0 +1,78 @@
+{
+  "case": {
+    "additional_inputs": [
+      "amscf.scs",
+      "cds.lib",
+      "control.tcl",
+      "disciplines.vams",
+      "hdl.var",
+      "interfaces.vams",
+      "rc.scs",
+      "tb.vams"
+    ],
+    "arguments": [
+      "-f",
+      "xrunArgs",
+      "-amsformat",
+      "psfxl_all",
+      "-svseed",
+      "42",
+      "-notimingchecks",
+      "-spectre_args",
+      "+aps +mt=2"
+    ],
+    "artifacts": [
+      {
+        "path": "xrun.log",
+        "required": true
+      }
+    ],
+    "dependency_mode": "explicit",
+    "entry_files": [
+      "xrunArgs"
+    ],
+    "input_root": "../examples/rc",
+    "log_files": [
+      "xrun.log"
+    ],
+    "name": "rc",
+    "schema_version": 2,
+    "waveforms": [
+      {
+        "analysis": "tran",
+        "artifact": "analog_psfxl",
+        "converter": "/opt/eda/cadence/IC618/tools/dfII/bin/srrutil",
+        "coverage": {
+          "atol_s": 1e-12,
+          "start_s": 0,
+          "stop_s": 8e-08
+        },
+        "format": "psfxl",
+        "id": "analog",
+        "limits": {
+          "bytes": 16777216,
+          "points": 30000,
+          "timeout_s": 45
+        },
+        "required": true,
+        "signals": [
+          "native_tb.vin",
+          "native_tb.vout"
+        ]
+      }
+    ],
+    "working_directory": "."
+  },
+  "execution": {
+    "connect_timeout_s": 8,
+    "control_timeout_s": 60,
+    "environment": {},
+    "local_output_root": "../runs",
+    "remote_root": "/tmp/ams-bridge-v1",
+    "ssh_config_file": "ssh.local",
+    "ssh_host": "simulation-server",
+    "transfer_timeout_s": 300,
+    "wall_timeout_s": 300,
+    "xrun_path": "xrun"
+  }
+}

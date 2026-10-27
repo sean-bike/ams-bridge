@@ -1,0 +1,27 @@
+`timescale 1ns/1ps
+`include "disciplines.vams"
+
+connectmodule bridge_l2e(d, a);
+  input d;
+  output a;
+  wire d;
+  \logic d;
+  electrical a;
+  analog I(a) <+ (V(a) - transition(d === 1'b1 ? 1.0 : 0.0, 0, 100p, 100p)) / 10.0;
+endmodule
+
+connectmodule bridge_e2l(a, d);
+  input a;
+  output d;
+  electrical a;
+  reg d;
+  \logic d;
+  initial d = 0;
+  always @(above(V(a) - 0.5, 1p, 1u)) d = 1;
+  always @(above(0.5 - V(a), 1p, 1u)) d = 0;
+endmodule
+
+connectrules bridge_rules;
+  connect bridge_l2e;
+  connect bridge_e2l;
+endconnectrules

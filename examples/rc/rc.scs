@@ -1,0 +1,5 @@
+simulator lang=spectre
+subckt rc_filter in out
+  R1 (in out) resistor r=1k
+  C1 (out 0) capacitor c=1p ic=0
+ends rc_filter

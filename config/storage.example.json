@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "execution": {
+    "ssh_host": "simulation-server",
+    "remote_root": "/tmp/ams-bridge-v1",
+    "local_output_root": "../runs",
+    "xrun_path": "xrun"
+  },
+  "local_root": "../runs",
+  "jobs": [
+    "../runs/0123456789abcdef0123456789abcdef"
+  ],
+  "categories": [
+    "remote_work",
+    "local_cache",
+    "local_diagnostics"
+  ]
+}

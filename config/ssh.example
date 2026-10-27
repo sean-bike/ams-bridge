@@ -1,0 +1,6 @@
+Host simulation-server
+    HostName simulation.example.org
+    User your-user
+    IdentityFile ~/.ssh/id_ed25519
+    BatchMode yes
+    StrictHostKeyChecking yes

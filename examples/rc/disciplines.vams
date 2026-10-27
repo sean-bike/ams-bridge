@@ -1,0 +1,21 @@
+// Minimal self-contained electrical discipline for the acceptance circuit.
+`ifndef BRIDGE_DISCIPLINES
+`define BRIDGE_DISCIPLINES
+nature Voltage;
+  units = "V";
+  access = V;
+  abstol = 1u;
+endnature
+nature Current;
+  units = "A";
+  access = I;
+  abstol = 1p;
+endnature
+discipline electrical;
+  potential Voltage;
+  flow Current;
+enddiscipline
+discipline \logic ;
+  domain discrete;
+enddiscipline
+`endif

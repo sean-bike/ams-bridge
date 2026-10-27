@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "source_directory": "/home/user/simulation/design/netlist",
+  "invoke_directory": "/home/user",
+  "include_directories": [
+    "/opt/eda/cadence/XCELIUM1803/tools.lnx86/spectre/etc/ahdl"
+  ],
+  "external_roots": [
+    "/home/user/pdk/models"
+  ],
+  "stop_s": 2e-08,
+  "limits": {
+    "files": 1024,
+    "file_bytes": 33554432,
+    "total_bytes": 67108864,
+    "timeout_s": 120
+  },
+  "case": {
+    "name": "unl_transient",
+    "log_files": [
+      "psf/xrun.log"
+    ],
+    "artifacts": [
+      {
+        "path": "psf/xrun.log",
+        "required": true
+      },
+      {
+        "path": "netlist/ams_digital.csv",
+        "required": true
+      },
+      {
+        "path": "netlist/ams_parallel_clock.csv",
+        "required": true
+      },
+      {
+        "path": "netlist/ams_analog.csv",
+        "required": true
+      }
+    ]
+  }
+}

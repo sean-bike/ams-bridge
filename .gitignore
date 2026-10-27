@@ -1,0 +1,30 @@
+# Local environment and packaging
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local configuration and credentials
+*.local.json
+config/*.local
+.env
+.env.*
+!.env.example
+
+# Runtime output
+runs/
+prepared/
+docs/evidence/
+*.tmp
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

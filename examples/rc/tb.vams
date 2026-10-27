@@ -1,0 +1,22 @@
+`timescale 1ns/1ps
+`include "disciplines.vams"
+
+module pulse_source(d);
+  output d;
+  reg d;
+  \logic d;
+  initial begin
+    d = 0;
+    #10 d = 1;
+    #40 d = 0;
+  end
+endmodule
+
+module native_tb;
+  electrical vin, vout;
+  pulse_source source(vin);
+  rc_filter filter(vin, vout);
+  initial begin
+    #80 $finish;
+  end
+endmodule

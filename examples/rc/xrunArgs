@@ -1,0 +1,12 @@
+-access +r
+-ams -64bit
+-incdir .
+-cdslib cds.lib
+-hdlvar hdl.var
+-top native_tb
+-amsconnrules bridge_rules
+-l xrun.log
+-input control.tcl
+interfaces.vams
+tb.vams
+amscf.scs

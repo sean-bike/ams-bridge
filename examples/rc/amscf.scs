@@ -1,0 +1,9 @@
+simulator lang=spectre
+include "rc.scs"
+save native_tb.vin native_tb.vout
+simulatorOptions options temp=27 reltol=1e-4
+tran tran stop=80n maxstep=10p errpreset=conservative
+amsd {
+  portmap subckt=rc_filter
+  config cell=rc_filter use=spice
+}
